@@ -12,7 +12,7 @@ python3.10 -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117diffusers, transformers
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 pip install diffusers[torch] transformers
 ```
 
