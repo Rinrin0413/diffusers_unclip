@@ -9,9 +9,10 @@ prompt = " ".join(argv[1:])
 print("Prompt:", prompt)
 print("Inference on", infer_on.upper())
 
-torch_dtype = torch.float16 if infer_on == "cuda" else torch.float32
-
-generate = UnCLIPPipeline.from_pretrained("kakaobrain/karlo-v1-alpha", torch_dtype=torch_dtype).to(infer_on)
+generate = UnCLIPPipeline.from_pretrained(
+    "kakaobrain/karlo-v1-alpha", 
+    torch_dtype=torch.float16 if infer_on == "cuda" else torch.float32
+).to(infer_on)
 
 image = generate(prompt).images[0]
 
