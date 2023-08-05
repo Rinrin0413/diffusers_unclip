@@ -24,7 +24,18 @@ pip install diffusers[torch] transformers
 ```bash
 # If not already activated
 source .venv/bin/activate
+```
 
+### Text to Image (t2i)
+
+```bash
 # Run script with prompts
-python . carbonara
+python . carbonara on a black plate
+```
+
+### Image Variation (i2i)
+
+```bash
+# Run script with image path
+python variation.py ./outputs/carbonara-on-a-black-plate_0.png
 ```
