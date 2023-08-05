@@ -3,19 +3,16 @@
 ## Setup [my environment (linux)]
 
 ```bash
-# Create outputs directory
+git clone https://github.com/Rinrin0413/diffusers_unclip.git
+cd diffusers_unclip
 mkdir outputs
 
-# Create venv
+# Create and activate virtual environment
 python3.10 -m venv .venv
-
-# Activate venv
 source .venv/bin/activate
 
-# Install torch
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
-
-# Install diffusers, transformers
+# Install dependencies
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117diffusers, transformers
 pip install diffusers[torch] transformers
 ```
 
