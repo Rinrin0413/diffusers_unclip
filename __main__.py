@@ -22,6 +22,7 @@ image = generate(prompt).images[0]
 i = 0
 while os.path.exists(f"outputs/{prompt}_{i}.png"):
     i += 1
-image.save(f"outputs/{prompt}_{i}.png")
+filename = f"outputs/{prompt.replace(' ', '-')}_{i}.png"
+image.save(filename)
 
-print("Done!")
+print(f"Done: " + filename)
