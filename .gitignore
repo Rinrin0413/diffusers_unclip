@@ -2,4 +2,6 @@
 outputs/
 __pycache__/
 
+init_outputs.sh
+
 .vscode/
