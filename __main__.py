@@ -1,5 +1,5 @@
 from sys import argv
-from settings import infer_on
+from settings import device
 from diffusers import UnCLIPPipeline
 import torch
 import os
@@ -7,12 +7,12 @@ import os
 prompt = " ".join(argv[1:])
 
 print("Prompt:", prompt)
-print("Inference on", infer_on.upper())
+print("Inference on", device.upper())
 
 generate = UnCLIPPipeline.from_pretrained(
     "kakaobrain/karlo-v1-alpha", 
-    torch_dtype=torch.float16 if infer_on == "cuda" else torch.float32
-).to(infer_on)
+    torch_dtype=torch.float16 if device == "cuda" else torch.float32
+).to(device)
 
 image = generate(prompt).images[0]
 

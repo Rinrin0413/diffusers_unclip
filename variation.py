@@ -1,5 +1,5 @@
 from sys import argv
-from settings import infer_on
+from settings import device
 from diffusers import UnCLIPImageVariationPipeline
 import torch
 from PIL import Image
@@ -7,13 +7,13 @@ import os
 
 path = argv[1]
 
-print("Inference on", infer_on.upper())
+print("Inference on", device.upper())
 print("Generating variation of", path)
 
 variation = UnCLIPImageVariationPipeline.from_pretrained(
     "kakaobrain/karlo-v1-alpha-image-variations", 
-    torch_dtype=torch.float16 if infer_on == "cuda" else torch.float32
-).to(infer_on)
+    torch_dtype=torch.float16 if device == "cuda" else torch.float32
+).to(device)
 
 image = Image.open(path)
 image = variation(image).images[0]
