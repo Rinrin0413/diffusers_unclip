@@ -23,4 +23,5 @@ while os.path.exists(f"outputs/{prompt}_{i}.png"):
 filename = f"outputs/{prompt}_{i}.png"
 image.save(filename)
 
-print(f"Done: " + filename)
+print("Saved", filename)
+print("Done!")
