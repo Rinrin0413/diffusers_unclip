@@ -10,8 +10,8 @@ print("Prompt:", prompt)
 print("Inference on", device.upper())
 
 generate = UnCLIPPipeline.from_pretrained(
-    "kakaobrain/karlo-v1-alpha", 
-    torch_dtype=torch.float16 if device == "cuda" else torch.float32
+    "kakaobrain/karlo-v1-alpha",
+    torch_dtype=torch.float16 if device == "cuda" else torch.float32,
 ).to(device)
 
 image = generate(prompt).images[0]
