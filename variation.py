@@ -25,4 +25,5 @@ while os.path.exists(f"{path}_variation{i}.png"):
 filename = f"{path}_variation{i}.png"
 image.save(filename)
 
-print(f"Done: " + filename)
+print("Saved", filename)
+print("Done!")
